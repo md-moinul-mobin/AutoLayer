@@ -6,8 +6,9 @@
       
     <description>Automatically processes new layers with custom symbology and CRS handling</description>
     
-    <!-- Download link to your plugin zip (GitHub main branch) -->
-    <download_url>https://github.com/md-moinul-mobin/AutoLayer/archive/refs/heads/main.zip</download_url>
+    <!-- IMPORTANT: this should point to your uploaded release zip -->
+    <!-- After you make a GitHub Release (v1.0), upload AutoLayer.zip and use its URL -->
+    <download_url>https://github.com/md-moinul-mobin/AutoLayer/releases/download/v1.0/AutoLayer.zip</download_url>
     
     <homepage>https://github.com/md-moinul-mobin/AutoLayer</homepage>
     <author>MD Moinul Mobin</author>
@@ -22,7 +23,7 @@
     <tags>layer,vector,crs,symbology,label,style,styling,auto,collapse</tags>
     <icon>autolayer.png</icon>
     
-    <!-- Optional but recommended -->
+    <!-- Optional -->
     <experimental>False</experimental>
     <deprecated>False</deprecated>
     <tracker>https://github.com/md-moinul-mobin/AutoLayer/issues</tracker>
@@ -44,7 +45,7 @@
       11. Toggle plugin on/off via toolbar icon.
     </about>
     
-    <!-- Folder name inside zip -->
+    <!-- Folder name inside the .zip MUST be AutoLayer -->
     <package_name>AutoLayer</package_name>
     
   </pyqgis_plugin>
