@@ -6,6 +6,7 @@ A smart QGIS plugin that automatically processes newly added layers, applying cu
 
 AutoLayer v1.0 Plugin - Key Features
 -CRS selection dialog for new projects with 4 specific options : EPSG:28992, EPSG:2154, EPSG:31370 & Choose Other.
+
 -Auto enable "Selection" mode after opening a project.
 -Automatically change/assign CRS of new layers with invalid or unknown CRS to match project CRS.
 -Auto symbology for all new vector layers. Point layers get diamond symbols, line layers get colored lines, polygon layers get colored outlines.
@@ -67,4 +68,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 
 For issues and questions, please create an issue in this repository or contact the author directly.
+
 
