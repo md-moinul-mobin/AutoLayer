@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugins>
+  <pyqgis_plugin
+      name="AutoLayer"
+      version="1.0">
+      
+    <description>Automatically processes new layers with custom symbology and CRS handling</description>
+    
+    <!-- Download link to your plugin zip (GitHub main branch) -->
+    <download_url>https://github.com/md-moinul-mobin/AutoLayer/archive/refs/heads/main.zip</download_url>
+    
+    <homepage>https://github.com/md-moinul-mobin/AutoLayer</homepage>
+    <author>MD Moinul Mobin</author>
+    <email>mdmoinulmobin@gmail.com</email>
+    
+    <!-- Compatibility -->
+    <qgis_minimum_version>3.16</qgis_minimum_version>
+    <qgis_maximum_version>3.99</qgis_maximum_version>
+    
+    <!-- Metadata -->
+    <category>Layer</category>
+    <tags>layer,vector,crs,symbology,label,style,styling,auto,collapse</tags>
+    <icon>autolayer.png</icon>
+    
+    <!-- Optional but recommended -->
+    <experimental>False</experimental>
+    <deprecated>False</deprecated>
+    <tracker>https://github.com/md-moinul-mobin/AutoLayer/issues</tracker>
+    <repository>https://github.com/md-moinul-mobin/AutoLayer</repository>
+    
+    <changelog>Initial release (v1.0)</changelog>
+    <about>
+      AutoLayer v1.0 Plugin - Key Features:
+      1. CRS selection dialog with 4 options.
+      2. Auto enable "Selection" mode.
+      3. Auto assign CRS for new layers.
+      4. Auto symbology for points, lines, polygons.
+      5. Sequential colors for vector layers.
+      6. Special styling for "Cutline" layers.
+      7. Special styling for "Tiles" layers.
+      8. Special styling for "Grid" layers.
+      9. Special styling for "EO" layers.
+      10. Auto sort/collapse new raster layers.
+      11. Toggle plugin on/off via toolbar icon.
+    </about>
+    
+    <!-- Folder name inside zip -->
+    <package_name>AutoLayer</package_name>
+    
+  </pyqgis_plugin>
+</plugins>
