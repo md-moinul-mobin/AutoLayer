@@ -4,7 +4,7 @@ description=Automatically processes new layers with custom symbology and CRS han
 version=1.0
 qgisMinimumVersion=3.16
 author=MD Moinul Mobin
-email=your.mdmoinulmobin@gmail.com
+email=mdmoinulmobin@gmail.com
 icon=autolayer.png
 category=Layer
 tags=layer,vector,crs,symbology,label,style,styling,auto,collapse
@@ -16,3 +16,4 @@ repository=https://github.com/md-moinul-mobin/AutoLayer
 
 [help]
 helpText=AutoLayer v1.0 Plugin - Key Features:\n1. CRS selection dialog with 4 options.\n2. Auto enable "Selection" mode.\n3. Auto assign CRS for new layers.\n4. Auto symbology for points, lines, polygons.\n5. Sequential colors for vector layers.\n6. Special styling for "Cutline" layers.\n7. Special styling for "Tiles" layers.\n8. Special styling for "Grid" layers.\n9. Special styling for "EO" layers.\n10. Auto sort/collapse new raster layers.\n11. Toggle plugin on/off via toolbar icon.
+
