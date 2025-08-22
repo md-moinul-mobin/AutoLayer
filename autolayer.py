@@ -2,7 +2,7 @@ from qgis.core import (
     QgsProject, QgsVectorLayer, QgsRasterLayer, QgsSymbol, QgsSingleSymbolRenderer,
     QgsFillSymbol, QgsLineSymbol, QgsMarkerSymbol, QgsPalLayerSettings,
     QgsTextFormat, QgsVectorLayerSimpleLabeling, QgsCoordinateReferenceSystem,
-    QgsLayerTreeLayer, QgsLayerTreeGroup
+    QgsLayerTreeLayer, QgsLayerTreeGroup, QgsSimpleLineSymbolLayer
 )
 from qgis.gui import QgsProjectionSelectionDialog
 from qgis.PyQt.QtWidgets import QDialog, QVBoxLayout, QPushButton, QAction
@@ -290,11 +290,12 @@ class AutoLayer:
                 symbol.setColor(QColor(rule['color']))
                 
             elif rule['type'] == 'polygon' and geom_type == 2:
-                symbol = QgsFillSymbol.createSimple({
-                    'style': rule.get('fill', 'no'),
-                    'outline_width': rule['outline_width'],
-                    'outline_color': rule['outline_color']
-                })
+                # Create QgsFillSymbol with outline-only configuration (Symbol layer type = Outline: Simple Line)
+                symbol = QgsFillSymbol()
+                # Remove default fill layer and add simple line layer for outline
+                symbol.deleteSymbolLayer(0)  # Remove default simple fill layer
+                line_layer = QgsSimpleLineSymbolLayer(QColor(rule['outline_color']), float(rule['outline_width']))
+                symbol.appendSymbolLayer(line_layer)
                 
             layer.setRenderer(QgsSingleSymbolRenderer(symbol))
             
@@ -325,13 +326,15 @@ class AutoLayer:
             elif geom_type == 1:  # Line
                 symbol = QgsLineSymbol.createSimple({'width': '0.6'})
             else:  # Polygon
-                symbol = QgsFillSymbol.createSimple({
-                    'style': 'no',
-                    'outline_width': '1.0',
-                    'outline_color': color.name()
-                })
+                # Create QgsFillSymbol with outline-only configuration (Symbol layer type = Outline: Simple Line)
+                symbol = QgsFillSymbol()
+                # Remove default fill layer and add simple line layer for outline
+                symbol.deleteSymbolLayer(0)  # Remove default simple fill layer
+                line_layer = QgsSimpleLineSymbolLayer(color, 1.0)
+                symbol.appendSymbolLayer(line_layer)
             
-            symbol.setColor(color)
+            if geom_type != 2:  # Only set color for non-polygon types (polygon uses line layer color directly)
+                symbol.setColor(color)
             layer.setRenderer(QgsSingleSymbolRenderer(symbol))
             
         except Exception as e:
